@@ -1,0 +1,8 @@
+<div id="books">
+  <input #searchBox (keyup)="search(searchBox.value)" placeholder="Tìm kiếm sách"/>
+  <ul class="books">
+    <li *ngFor="let book of books$ | async" class="bookListItem">
+      <a [routerLink]="['/books',book.id]">{{book.title}}</a>
+    </li>
+  </ul>
+</div>

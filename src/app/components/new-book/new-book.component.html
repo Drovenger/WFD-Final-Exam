@@ -1,0 +1,29 @@
+<h3>Thêm mới một cuốn sách</h3>
+<form [formGroup]="formBook" (ngSubmit)="add()">
+  <input type="hidden" class="form-control"
+         formControlName="id" [(ngModel)]="book.id"
+         name="id" id="id"
+         aria-label="id" placeholder="Id">
+  <label for="title">Tiêu đề:</label>
+  <input type="text" class="form-control"
+         formControlName="title" [(ngModel)]="book.title"
+         name="title" id="title"
+         aria-label="Title" placeholder="Tiêu đề">
+  <div *ngIf="!formBook.controls.title.valid && formBook.controls.title.touched" class="alert alert-danger">
+    Yêu cầu cần phải có tiêu đề !
+  </div>
+  <label for="author">Tác giả:</label>
+  <input type="text" class="form-control"
+         formControlName="author" [(ngModel)]="book.author"
+         name="author" id="author"
+         aria-label="author" placeholder="Tên tác giả">
+  <div *ngIf="!formBook.controls.author.valid && formBook.controls.author.touched" class="alert alert-danger">
+    Yêu cầu cần phải có tên tác giẩ !
+  </div>
+  <label>Giới thiệu sách:</label>
+  <textarea rows="4" type="text" class="form-control"
+            formControlName="description" [(ngModel)]="book.description"
+            name="description" aria-label="description" placeholder="Giới thiệu nội dung cuốn sách"></textarea>
+  <input type="submit" class="btn btn-success mt-2 mr-2" value="Thêm">
+  <a class="btn btn-danger mt-2" routerLink="/books">Thoát</a>
+</form>

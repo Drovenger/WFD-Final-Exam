@@ -1,0 +1,29 @@
+<h3>Thay đổi thông tin sách</h3>
+<form [formGroup]="formEdit" (ngSubmit)="update()">
+  <input type="hidden" class="form-control"
+         formControlName="id"
+         name="id" id="id"
+         aria-label="id" placeholder="Id">
+  <label for="title">Tiêu đề:</label>
+  <input type="text" class="form-control"
+         formControlName="title"
+         name="title" id="title"
+         aria-label="Title" placeholder="Tiêu đề">
+  <div *ngIf="!formEdit.controls.title.valid && formEdit.controls.title.touched" class="alert alert-danger">
+    Yêu cầu cần phải có tiêu đề !
+  </div>
+  <label for="author">Tác giả:</label>
+  <input type="text" class="form-control"
+         formControlName="author"
+         name="author" id="author"
+         aria-label="author" placeholder="Tên tác giả">
+  <div *ngIf="!formEdit.controls.author.valid && formEdit.controls.author.touched" class="alert alert-danger">
+    Yêu cầu cần phải có tên tác giẩ !
+  </div>
+  <label>Giới thiệu sách:</label>
+  <textarea rows="4" type="text" class="form-control"
+            formControlName="description"
+            name="description" aria-label="description" placeholder="Giới thiệu nội dung cuốn sách"></textarea>
+  <input type="submit" class="btn btn-success mt-2" value="Thay đổi">
+  <a class="btn btn-danger mt-2 ml-2" routerLink="/books">Thoát</a>
+</form>

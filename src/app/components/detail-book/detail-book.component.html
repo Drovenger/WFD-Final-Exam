@@ -1,0 +1,13 @@
+<a class="btn btn-success" routerLink="/books">Quay về danh sách</a>
+<br>
+<br>
+<h3>Thông tin sách</h3>
+<div *ngIf="book; else nothing1">
+  <span class="font-weight-bold">Tiêu đề: </span><span>{{book.title}}</span><br>
+  <span class="font-weight-bold">Tác giả: </span><span>{{book.author}}</span><br>
+  <span class="font-weight-bold">Giới thiệu sách: </span><span>{{book.description}}</span><br>
+</div>
+
+<ng-template #nothing1>
+  <p>Nothing to show</p>
+</ng-template>
