@@ -16,8 +16,14 @@
     <td>{{i + 1}}</td>
     <td><a [routerLink]="['/books',book.id]">{{book.title}}</a></td>
     <td>{{book.author}}</td>
-    <td><a [routerLink]="['/books', 'edit', book.id]">Sửa</a> | <a
-      [routerLink]="['/books', 'delete', book.id]">Xóa</a></td>
+<!--    <td>-->
+<!--      <a [routerLink]="['/books', 'edit', book.id]">Sửa</a> |-->
+<!--      <a [routerLink]="['/books', 'delete', book.id]">Xóa</a>-->
+<!--    </td>-->
+    <td>
+      <button [routerLink]="['/books', 'edit', book.id]" class="btn btn-info" style="margin-left: 10px">Sửa</button>
+      <button [routerLink]="['/books', 'delete', book.id]" class="btn btn-danger" style="margin-left: 10px">Xóa</button>
+    </td>
   </tr>
   </tbody>
 </table>
