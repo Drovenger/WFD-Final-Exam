@@ -1,7 +1,7 @@
-<h3 style="text-align: center">Tủ sách yêu thích</h3>
+<h2 style="text-align: center">Tủ sách yêu thích</h2>
 <app-search-book></app-search-book>
 <a class="btn btn-success float-right" routerLink="create">Thêm một cuốn sách</a>
-<h5>Có {{listBook.length}} cuốn sách</h5>
+<h4>Có {{listBook.length}} cuốn sách</h4>
 <table class="table table-bordered table-hover table-striped">
   <thead class="bg-primary text-light">
   <tr>
@@ -16,10 +16,6 @@
     <td>{{i + 1}}</td>
     <td><a [routerLink]="['/books',book.id]">{{book.title}}</a></td>
     <td>{{book.author}}</td>
-<!--    <td>-->
-<!--      <a [routerLink]="['/books', 'edit', book.id]">Sửa</a> |-->
-<!--      <a [routerLink]="['/books', 'delete', book.id]">Xóa</a>-->
-<!--    </td>-->
     <td>
       <button [routerLink]="['/books', 'edit', book.id]" class="btn btn-info" style="margin-left: 10px">Sửa</button>
       <button [routerLink]="['/books', 'delete', book.id]" class="btn btn-danger" style="margin-left: 10px">Xóa</button>
